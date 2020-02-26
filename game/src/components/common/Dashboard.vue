@@ -1,8 +1,8 @@
 <template>
     <div class="dashboard">
       <cart :style="{height: height + 'px'}" class="card" v-for="cart, index in carts" :key="index">
-        <img v-if="cart.open" slot="card" :src="cart.img">
-        <img v-else slot="card" src="../../assets/logo.png" @click="openCard(cart.id)">
+        <img :class="{turn0: cart.open}" class="back" v-if="cart.open" slot="card" :src="cart.img">
+        <img :class="{trun180: !cart.open}" class="front" v-else slot="card" src="../../assets/logo.png" @click="openCard(cart.id)">
       </cart>
       <div class="footer"> 状态： {{status}}</div>
       <div>
@@ -59,6 +59,7 @@
         console.log('打开卡片')
         store.dispatch('openCard', id)
         if(this.finalList.length == 16){
+          store.commit('setStatus', 'wait')
           alert("success")
         }
       }
@@ -88,5 +89,15 @@
   }
   .footer{
     line-height: 44px;
+  }
+  .front, .back{
+    -webkit-backface-visibility: hidden;
+    transition: -webkit-transform 800ms
+  }
+  .turn0 {
+    -webkit-transform: translateZ(0) rotateY(180deg)
+  }
+  .turn180 {
+    -webkit-transform: translateZ(0) rotateY(-180deg)
   }
 </style>
