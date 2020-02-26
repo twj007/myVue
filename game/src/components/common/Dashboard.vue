@@ -47,7 +47,7 @@
       for(let i = 0; i < index.length; i ++){
           carts[i] = {
           id: index[i],
-          img: '../../assets/card/' + index[i] + '.png',
+          img: require('../../assets/card/' + index[i] + '.png'),
           open: false
         }
       }
@@ -92,12 +92,12 @@
   }
   .front, .back{
     -webkit-backface-visibility: hidden;
-    transition: -webkit-transform 800ms
+    transition: -webkit-transform 1000ms
   }
   .turn0 {
-    -webkit-transform: translateZ(0) rotateY(180deg)
+    -webkit-transform: translateZ(0) rotateY(0deg)
   }
   .turn180 {
-    -webkit-transform: translateZ(0) rotateY(-180deg)
+    -webkit-transform: translateZ(0) rotateY(180deg)
   }
 </style>

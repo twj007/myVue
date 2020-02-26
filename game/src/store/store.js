@@ -19,10 +19,8 @@ export default new Vuex.Store({
     finalList: [], //完成的卡片列表
   },
   mutations: {
-    setStatus(state){
-      if(state.status == 'wait'){
-        state.status = 'running'
-      }
+    setStatus(state, status){
+      state.status = status
     },
     // 设置卡片列表
     setCardList(state, list){
@@ -68,15 +66,15 @@ export default new Vuex.Store({
         }else{
           console.log('没有匹配到卡片')
           //没匹配到
-          state.cardList.forEach(v => {if(v.id == id || v.id == state.clickedCard[0].id){v.open = false}})
-          state.clickedCard = null
+          setTimeout(disable, 1000, state, id)
+
         }
       }
     }
   },
   actions: {
     openCard(context, id){
-      context.commit('setStatus')
+      context.commit('setStatus', 'running')
       // 1. 判断是否加步数
       context.commit('recordClick', id)
       // 2. 判断匹配卡片
@@ -91,3 +89,10 @@ export default new Vuex.Store({
     clickedCard: state => {return state.clickedCard}
   }
 })
+
+
+function disable(state, id){
+  console.log(state)
+  state.cardList.forEach(v => {if(v.id == id || v.id == state.clickedCard[0].id){v.open = false}})
+  state.clickedCard = null
+}
