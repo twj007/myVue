@@ -1,15 +1,15 @@
 <template>
   <div>
-    <main-tab-bar></main-tab-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import MainTabBar from '@/components/content/MainTabBar'
+  import MainTabBar from '@/components/content/TabBar/MainTabBar'
+  import MainNavBar from '@/components/content/NavBar/MainNavBar'
   export default {
-    name: 'HelloWorld',
-    components: {MainTabBar},
+    name: 'main',
+    components: {MainNavBar, MainTabBar},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'

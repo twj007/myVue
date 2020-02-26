@@ -5,18 +5,27 @@ import App from './App'
 import router from './router'
 import Router from 'vue-router'
 import {getCookie} from '@/common/common'
+import axios from 'axios'
+import EasyGoTop from 'easy-go-top'
+
+Vue.use(EasyGoTop)
 
 Vue.config.productionTip = false
+
+
+// axios 全局配置
+axios.defaults.baseURL = 'http://localhost:8082'
+axios.defaults.timeout = 5000
 
 router.beforeEach((from, to, next) => {
   console.log(from)
   let cookie = getCookie("zzz")
   console.log(cookie)
-  if(cookie === '' && from.path == "/home"){
-    next('/cart')
-  }else{
-    next()
-  }
+  // if(cookie === '' && from.path == "/home"){
+  //   next('/cart')
+  // }else{
+  next()
+  // }
 })
 const routerPush = Router.prototype.push
 Router.prototype.push = function push(location) {

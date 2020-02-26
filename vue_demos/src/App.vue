@@ -1,15 +1,26 @@
 <template>
   <div id="app">
-    <main-tab-bar></main-tab-bar>
+    <main-nav-bar></main-nav-bar>
     <router-view/>
+    <main-tab-bar></main-tab-bar>
+    <easy-go-top
+      :custom-style="{ boxShadow: 'none' }"
+      :size="52"
+      background-color="rgb(231, 234, 241)"
+      color="#9aaabf"
+      :bottom="60"
+      :right="30"
+    ></easy-go-top>
   </div>
 </template>
 
 <script>
-  import MainTabBar from '@/components/content/MainTabBar'
+  import MainTabBar from '@/components/content/TabBar/MainTabBar'
+  import MainNavBar from '@/components/content/NavBar/MainNavBar'
+
   export default {
     name: 'App',
-    components: {MainTabBar}
+    components: {MainTabBar, MainNavBar}
   }
 </script>
 
@@ -20,6 +31,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>

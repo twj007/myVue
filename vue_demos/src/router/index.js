@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Main from '@/components/Main'
 import cart from '@/views/cart/cart'
 import category from '@/views/category/category'
 import home from '@/views/home/home'
@@ -13,29 +13,26 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: cart
-    },
-    {
-      path: '/category',
-      name: 'category',
-      component: category
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: home
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: profile
-    }
+      name: 'main',
+      component: Main,
+      children: [{
+        path: 'home',
+        name: 'home',
+        component: home
+      }, {
+        path: 'profile',
+        name: 'profile',
+        component: profile
+      }, {
+        path: 'category',
+        name: 'category',
+        component: category
+      }, {
+        path: 'cart',
+        name: 'cart',
+        component: cart
+      }]
 
+    }
   ]
 })

@@ -43,6 +43,10 @@
     flex: 1;
     text-align: center;
   }
+  .tab-bar-item img{
+    width: 24px;
+    height: 24px;
+  }
   .active{
     color: red
   }
