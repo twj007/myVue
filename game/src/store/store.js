@@ -24,7 +24,7 @@ export default new Vuex.Store({
     },
     // 设置卡片列表
     setCardList(state, list){
-      list.forEach(v => {state.cardList.push(v)})
+      state.cardList.push(...list)
       console.log(state.cardList)
     },
     // 记录点击
@@ -60,8 +60,7 @@ export default new Vuex.Store({
         if((state.clickedCard[0].id + id) === 17){
           console.log('匹配到卡片', state.clickedCard[0].id, card.id)
           // 匹配到了
-          state.finalList.push(state.clickedCard)
-          state.finalList.push(card)
+          state.finalList.push(state.clickedCard, card)
           state.clickedCard = null
         }else{
           console.log('没有匹配到卡片')

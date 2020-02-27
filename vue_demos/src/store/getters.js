@@ -1,7 +1,9 @@
 
+
+
 // state => state.app.prop
 const getters = {
-  carts: state => state.cart.carts
+  cartList: state => state.cart.cartList
 }
 
 export default getters

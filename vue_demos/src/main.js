@@ -8,7 +8,9 @@ import {getCookie} from '@/common/common'
 import axios from 'axios'
 import EasyGoTop from 'easy-go-top'
 
+
 Vue.use(EasyGoTop)
+
 
 Vue.config.productionTip = false
 

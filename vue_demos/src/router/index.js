@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '@/components/Main'
+import MainPage from '@/components/MainPage'
 import cart from '@/views/cart/cart'
 import category from '@/views/category/category'
 import home from '@/views/home/home'
 import profile from '@/views/profile/profile'
+import Detail from '@/components/content/Detail/detail'
 
 Vue.use(Router)
 
@@ -13,8 +14,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
-      component: Main,
+      name: 'mainPage',
+      component: MainPage,
       children: [{
         path: 'home',
         name: 'home',
@@ -31,6 +32,10 @@ export default new Router({
         path: 'cart',
         name: 'cart',
         component: cart
+      }, {
+        path: 'detail',
+        name: 'detail',
+        component: Detail
       }]
 
     }

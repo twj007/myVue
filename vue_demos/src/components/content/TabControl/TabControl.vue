@@ -15,16 +15,19 @@
         default(){
           return []
         }
-      },
-      currentIndex: {
-        default(){
-          return 0
-        }
       }
+    },
+    data() {
+      return {
+        currentIndex : 0
+      }
+    },
+    computed: {
     },
     methods: {
       changeState(index){
         this.currentIndex = index
+        this.$emit('changeState', index)
       }
     }
   }
@@ -39,6 +42,7 @@
   top: 44px;
   background: #ffffff;
   box-shadow: 0 5px 5px rgba(100, 100, 100, 0.1);
+  z-index: 9;
 }
 .tab-control-item{
   flex: 1;

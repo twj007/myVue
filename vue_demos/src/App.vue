@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <main-nav-bar></main-nav-bar>
     <router-view/>
-    <main-tab-bar></main-tab-bar>
     <easy-go-top
       :custom-style="{ boxShadow: 'none' }"
       :size="52"
@@ -15,12 +13,9 @@
 </template>
 
 <script>
-  import MainTabBar from '@/components/content/TabBar/MainTabBar'
-  import MainNavBar from '@/components/content/NavBar/MainNavBar'
 
   export default {
-    name: 'App',
-    components: {MainTabBar, MainNavBar}
+    name: 'App'
   }
 </script>
 

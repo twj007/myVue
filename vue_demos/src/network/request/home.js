@@ -6,3 +6,14 @@ export function getHomeMultiData(){
     url: '/home'
   })
 }
+
+export function getHomeGoodMock(){
+
+  return requestPromise({
+    url: 'static/json/HomGoodsData.json',
+    method: 'get',
+    dataType: "json",
+    crossDomain: true,
+    cache: false
+  })
+}

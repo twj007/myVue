@@ -8,12 +8,15 @@
   import MainTabBar from '@/components/content/TabBar/MainTabBar'
   import MainNavBar from '@/components/content/NavBar/MainNavBar'
   export default {
-    name: 'main',
+    name: 'mainPage',
     components: {MainNavBar, MainTabBar},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
+    },
+    created() {
+      this.$router.push('/home')
     }
   }
 </script>

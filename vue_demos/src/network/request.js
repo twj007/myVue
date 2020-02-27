@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function request(config, success, fail){
   const instance = axios.create({
-    baseURL: 'http://localhost:8082',
+    baseURL: 'http://localhost:8081',
     timeout: 5000
   })
 
@@ -15,7 +15,7 @@ export function request(config, success, fail){
 
 export function requestPromise(config){
   const instance = axios.create({
-    baseURL: 'http://localhost:8082',
+    baseURL: 'http://localhost:8081',
     timeout: 5000
   })
   instance.interceptors.request.use(res => {
@@ -57,8 +57,11 @@ export function requestPromise(config){
 
 export function requestInstance(config){
   const instance = axios.create({
-    baseURL: 'http://localhost:8082',
+    baseURL: 'http://localhost:8081',
     timeout: 5000
   })
   return instance(config)
 }
+
+
+
