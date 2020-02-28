@@ -7,12 +7,16 @@ import Router from 'vue-router'
 import {getCookie} from '@/common/common'
 import axios from 'axios'
 import EasyGoTop from 'easy-go-top'
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+
+Vue.config.productionTip = false
+
+Vue.use(Antd);
 
 
 Vue.use(EasyGoTop)
 
-
-Vue.config.productionTip = false
 
 
 // axios 全局配置

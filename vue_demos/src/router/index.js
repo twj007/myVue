@@ -6,6 +6,8 @@ import category from '@/views/category/category'
 import home from '@/views/home/home'
 import profile from '@/views/profile/profile'
 import Detail from '@/components/content/Detail/detail'
+import upload from '@/views/upload/upload'
+import ActivityPlanExport from '@/views/salesone/activity/ActivityPlanExport'
 
 Vue.use(Router)
 
@@ -36,6 +38,14 @@ export default new Router({
         path: 'detail',
         name: 'detail',
         component: Detail
+      }, {
+        path: 'upload',
+        name: 'upload',
+        component: upload
+      }, {
+        path: 'export',
+        name: 'export',
+        component: ActivityPlanExport
       }]
 
     }

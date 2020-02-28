@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {BASEURL_DEV} from '@/common/common'
 
 export function request(config, success, fail){
   const instance = axios.create({
@@ -59,6 +60,41 @@ export function requestInstance(config){
   const instance = axios.create({
     baseURL: 'http://localhost:8081',
     timeout: 5000
+  })
+  return instance(config)
+}
+
+
+export function upload(config){
+  const instance = axios.create({
+    baseURL: 'http://localhost:8082',
+    timeout: 5000,
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+  return instance(config)
+}
+
+export function getUploads(config){
+  const instance = axios.create({
+    baseURL: 'http://localhost:8082',
+    timeout: 5000,
+  })
+  return instance(config)
+}
+export function getFiles(config){
+  const instance = axios.create({
+    baseURL: BASEURL_DEV,
+    timeout: 5000,
+  })
+  return instance(config)
+}
+
+export function requestDEV(config){
+  const instance = axios.create({
+    baseURL: BASEURL_DEV,
+    timeout: 5000,
   })
   return instance(config)
 }
