@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.4.11",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "better-scroll": "^2.0.0-beta.6",
     "c-swipe": "^2.1.5",
     "easy-go-top": "^1.0.1",
